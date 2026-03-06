@@ -56,10 +56,10 @@ class TestBatteryScheduler:
     def test_flat_prices_near_zero_savings(self):
         flat = np.full(24, 0.15)
         load = np.full(24, 2.0)
-        batt = BatteryScheduler(capacity_kwh=10, max_power_kw=5)
+        # initial_soc=0 so battery has no stored energy to arbitrage
+        batt = BatteryScheduler(capacity_kwh=10, max_power_kw=5, initial_soc=0.0, min_soc=0.0)
         result = batt.optimize(flat, load_kw=load)
-        # With flat prices there's no incentive to cycle the battery
-        # savings should be near zero (small due to efficiency losses)
+        # With flat prices and empty battery, no cost arbitrage is possible
         assert result.savings_usd <= 0.01
 
 

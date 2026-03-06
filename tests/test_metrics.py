@@ -53,8 +53,8 @@ def test_r2_perfect(perfect):
 def test_mape_known():
     a = np.array([100.0, 100.0, 100.0])
     f = np.array([110.0, 90.0, 100.0])
-    # Errors: 10%, 10%, 0% → MAPE ≈ 6.67%
-    assert mape(a, f) == pytest.approx(100 / 3 * 0.2 / 2 * 100, rel=0.01)
+    # Errors: 10%, 10%, 0% → MAPE = (0.1 + 0.1 + 0) / 3 * 100 ≈ 6.667%
+    assert mape(a, f) == pytest.approx(20.0 / 3.0, rel=0.01)
 
 
 def test_cvrmse_known():
