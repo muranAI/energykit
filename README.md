@@ -1,20 +1,29 @@
 <p align="center">
   <a href="https://muranai.com">
-    <img src="https://muranai.com/images/logo.png" alt="Muranai" width="200"/>
+    <img src="https://muranai.com/images/logo_white.png" alt="Muranai" width="220"/>
   </a>
 </p>
 
-# energykit
+<h1 align="center">energykit</h1>
 
-[![CI](https://github.com/muranai/energykit/actions/workflows/ci.yml/badge.svg)](https://github.com/muranai/energykit/actions/workflows/ci.yml)
-[![PyPI version](https://badge.fury.io/py/energykit.svg)](https://badge.fury.io/py/energykit)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Downloads](https://static.pepy.tech/badge/energykit)](https://pepy.tech/project/energykit)
+<p align="center">
+  <a href="https://github.com/muranai/energykit/actions/workflows/ci.yml"><img src="https://github.com/muranai/energykit/actions/workflows/ci.yml/badge.svg" alt="CI"/></a>
+  <a href="https://badge.fury.io/py/energykit"><img src="https://badge.fury.io/py/energykit.svg" alt="PyPI version"/></a>
+  <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="Python 3.9+"/></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"/></a>
+  <a href="https://pepy.tech/project/energykit"><img src="https://static.pepy.tech/badge/energykit" alt="Downloads"/></a>
+</p>
 
-**The Python toolkit that turns energy data into dollars.**
+<p align="center">
+  <strong>The Python toolkit that turns energy data into dollars.</strong><br/>
+  Most energy tools stop at the metric. energykit goes all the way to the money.
+</p>
 
-Most energy tools stop at the metric. energykit goes all the way to the money.
+<p align="center">
+  <a href="https://pypi.org/project/energykit/">📦 PyPI</a> &nbsp;·&nbsp;
+  <a href="https://github.com/muranAI/energykit/issues">🐛 Issues</a> &nbsp;·&nbsp;
+  <a href="https://muranai.com">🌐 Muranai.com</a>
+</p>
 
 ```python
 import energykit as ek
@@ -23,27 +32,27 @@ report = ek.diagnose(your_meter_data)
 ```
 
 ```
-╔════════════════════════════════════════════════════════════════════�-
-║           ⚡  ENERGYKIT  |  ENERGY FINANCIAL DIAGNOSIS  ⚡          ║
+╔════════════════════════════════════════════════════════════════════╗
+║           ⚡  ENERGYKIT  |  ENERGY FINANCIAL DIAGNOSIS  ⚡        ║
 ╠════════════════════════════════════════════════════════════════════╣
 ║  Period  : Jan 2025 → Dec 2025   (8,760 readings)                  ║
-║  Total   : 26,461 kWh   Avg: 3.02 kW   Peak: 5.86 kW              ║
+║  Total   : 26,461 kWh   Avg: 3.02 kW   Peak: 5.86 kW               ║
 ╠════════════════════════════════════════════════════════════════════╣
-║  💡 DEMAND CHARGE RISK                                              ║
-║  Peak event  : May 14 @ 14:00  →  5.86 kW                         ║
+║  💡 DEMAND CHARGE RISK                                             ║
+║  Peak event  : May 14 @ 14:00  →  5.86 kW                          ║
 ║  Est. annual demand charge : $702  (@$12.50/kW)                    ║
-║  Battery [10 kWh / 5 kW]   : save $677/yr  (96%)                  ║
+║  Battery [10 kWh / 5 kW]   : save $677/yr  (96%)                   ║
 ╠════════════════════════════════════════════════════════════════════╣
-║  🔍 ANOMALY DETECTION                                               ║
+║  🔍 ANOMALY DETECTION                                              ║
 ║  Anomalies : 23 events  (0.26% of readings)                        ║
 ║  Est. waste : 312 kWh  →  $47  over the period                     ║
 ║  Top anomaly : Mar 12 @ 02:00 - overnight  +87 kWh  ($13)          ║
 ╠════════════════════════════════════════════════════════════════════╣
-║  🔋 DER OPPORTUNITY  (battery dispatch optimisation)                ║
+║  🔋 DER OPPORTUNITY  (battery dispatch optimisation)               ║ 
 ║  Battery [13.5 kWh / 5 kW] annual savings : $729                   ║
 ║  Estimated payback (@$8,000 install)       : 11.0 yr               ║
 ╠════════════════════════════════════════════════════════════════════╣
-║  📊 TOTAL ADDRESSABLE SAVINGS                                       ║
+║  📊 TOTAL ADDRESSABLE SAVINGS                                      ║
 ║  Anomaly correction   :      $47/yr                                ║
 ║  Demand charge opt.   :     $677/yr  [10 kWh battery]              ║
 ║  DER dispatch         :     $729/yr  [13.5 kWh]                    ║
@@ -70,13 +79,17 @@ That's the difference between a technical metric and a business case.
 
 ```bash
 pip install energykit
+```
 
+```bash
 # With gradient boosting forecasting (recommended)
 pip install "energykit[forecast]"
 
 # Everything
 pip install "energykit[all]"
 ```
+
+> **Requires Python 3.9+**. Core dependencies: `numpy`, `pandas 2.x`, `scikit-learn`, `scipy`. LightGBM is optional but recommended.
 
 ---
 
@@ -312,6 +325,8 @@ prices = load_sample_tou_prices("residential_us", periods=24)
 ---
 
 ## Contributing
+
+⭐ **If energykit saves you time or money, please [star the repo](https://github.com/muranAI/energykit) — it helps others find it.**
 
 Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md).
 
