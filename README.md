@@ -11,7 +11,7 @@
   <a href="https://badge.fury.io/py/energykit"><img src="https://badge.fury.io/py/energykit.svg" alt="PyPI version"/></a>
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="Python 3.9+"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"/></a>
-  <a href="https://pepy.tech/project/energykit"><img src="https://img.shields.io/pypi/dm/energykit?label=downloads&color=blue" alt="Downloads"/></a>
+  <a href="https://github.com/muranAI/energykit/stargazers"><img src="https://img.shields.io/github/stars/muranAI/energykit?style=social" alt="GitHub Stars"/></a>
 </p>
 
 <p align="center">
