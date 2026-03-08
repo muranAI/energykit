@@ -52,6 +52,8 @@ coverage.xml
 # Jupyter Notebooks
 .ipynb_checkpoints
 *.ipynb
+# Track notebooks/ folder explicitly
+!notebooks/*.ipynb
 
 # Data files
 *.csv
