@@ -37,7 +37,7 @@ report = ek.diagnose(your_meter_data)
 ║  🔍 ANOMALY DETECTION                                               ║
 ║  Anomalies : 23 events  (0.26% of readings)                        ║
 ║  Est. waste : 312 kWh  →  $47  over the period                     ║
-║  Top anomaly : Mar 12 @ 02:00 — overnight  +87 kWh  ($13)          ║
+║  Top anomaly : Mar 12 @ 02:00 - overnight  +87 kWh  ($13)          ║
 ╠════════════════════════════════════════════════════════════════════╣
 ║  🔋 DER OPPORTUNITY  (battery dispatch optimisation)                ║
 ║  Battery [13.5 kWh / 5 kW] annual savings : $729                   ║
@@ -60,7 +60,7 @@ report = ek.diagnose(your_meter_data)
 *"I have a 7% MAPE forecast."*
 
 **After energykit:**  
-*"My 7% MAPE costs $234,000/year in imbalance settlement — and 80% of that comes from 50 peak hours. My worst demand charge event was May 14 at 2pm ($879 that month). A 10 kWh battery pays back in 3.8 years. Total addressable savings: $1,453/year."*
+*"My 7% MAPE costs $234,000/year in imbalance settlement - and 80% of that comes from 50 peak hours. My worst demand charge event was May 14 at 2pm ($879 that month). A 10 kWh battery pays back in 3.8 years. Total addressable savings: $1,453/year."*
 
 That's the difference between a technical metric and a business case.
 
@@ -82,9 +82,9 @@ pip install "energykit[all]"
 
 ## Core modules
 
-### `energykit.diagnose` — One-call financial audit
+### `energykit.diagnose` - One-call financial audit
 
-The entry point. Feed it any smart-meter Series and get a complete financial audit — demand charges, anomaly waste, battery ROI — as a terminal dashboard and a structured object.
+The entry point. Feed it any smart-meter Series and get a complete financial audit - demand charges, anomaly waste, battery ROI - as a terminal dashboard and a structured object.
 
 ```python
 import energykit as ek
@@ -102,7 +102,7 @@ print(report.der_annual_savings_usd)          # 729.00
 
 ---
 
-### `energykit.cost` — Translate data into dollars
+### `energykit.cost` - Translate data into dollars
 
 #### Demand charge analysis
 
@@ -132,7 +132,7 @@ print(result.battery_savings_df)
 
 #### Imbalance settlement cost
 
-For generators, aggregators, and portfolios — forecast errors create imbalance charges that can dwarf the headline MAPE number.
+For generators, aggregators, and portfolios - forecast errors create imbalance charges that can dwarf the headline MAPE number.
 
 ```python
 from energykit.cost import ImbalanceCostCalculator, forecast_value_of_accuracy
@@ -166,9 +166,9 @@ print(report)
 
 ---
 
-### `energykit.anomaly` — Smart meter anomaly detection with financial impact
+### `energykit.anomaly` - Smart meter anomaly detection with financial impact
 
-Not just *"you have an anomaly"* — but *"this event wasted 450 kWh and cost you $67"*.
+Not just *"you have an anomaly"* - but *"this event wasted 450 kWh and cost you $67"*.
 
 ```python
 from energykit.anomaly import MeterAnomalyDetector
@@ -191,14 +191,14 @@ print(result.top_anomalies_df[["anomaly_type", "excess_kwh", "estimated_cost_usd
 **Anomaly types detected:**
 | Type | Meaning |
 |------|---------|
-| `spike` | Instantaneous outlier — equipment fault, data error |
-| `sustained_elevation` | ≥3 consecutive readings above threshold — HVAC fault, equipment left on |
-| `overnight` | Anomaly between midnight–5am — after-hours waste or energy theft risk |
-| `sudden_drop` | Far below baseline — meter fault or curtailment event |
+| `spike` | Instantaneous outlier - equipment fault, data error |
+| `sustained_elevation` | ≥3 consecutive readings above threshold - HVAC fault, equipment left on |
+| `overnight` | Anomaly between midnight–5am - after-hours waste or energy theft risk |
+| `sudden_drop` | Far below baseline - meter fault or curtailment event |
 
 ---
 
-### `energykit.forecast` — Load forecasting
+### `energykit.forecast` - Load forecasting
 
 ```python
 from energykit.forecast import LoadForecaster
@@ -213,9 +213,9 @@ Works with **LightGBM** (if installed) or scikit-learn's `HistGradientBoostingRe
 
 ---
 
-### `energykit.optimize` — DER scheduling
+### `energykit.optimize` - DER scheduling
 
-Provably-optimal battery and EV dispatch — no commercial solver required.
+Provably-optimal battery and EV dispatch - no commercial solver required.
 
 ```python
 from energykit.optimize import BatteryScheduler, EVScheduler
@@ -234,9 +234,9 @@ print(f"Smart vs dumb charging savings: ${ev_result.savings_usd:.2f}")
 
 ---
 
-### `energykit.features` — Energy feature engineering
+### `energykit.features` - Energy feature engineering
 
-40+ energy-specific features from any hourly time series — in one sklearn-compatible transformer.
+40+ energy-specific features from any hourly time series - in one sklearn-compatible transformer.
 
 ```python
 from energykit.features import EnergyFeatureExtractor
@@ -255,7 +255,7 @@ Features: temporal (`hour`, `is_holiday`, `season`), cyclical sin/cos, TOU block
 
 ---
 
-### `energykit.benchmark` — ASHRAE-14 compliant metrics
+### `energykit.benchmark` - ASHRAE-14 compliant metrics
 
 ```python
 from energykit.benchmark import mape, cvrmse, EnergyForecastBenchmark
@@ -270,7 +270,7 @@ Metrics: MAPE, sMAPE, MAE, RMSE, CVRMSE, R², peak coincidence, load factor erro
 
 ---
 
-### `energykit.datasets` — Dataset loaders
+### `energykit.datasets` - Dataset loaders
 
 ```python
 from energykit.datasets import load_uci_household, load_synthetic_load, load_sample_tou_prices
@@ -294,7 +294,7 @@ prices = load_sample_tou_prices("residential_us", periods=24)
 | Battery / EV optimization     | ✅ | ❌ | ❌ | 400 lines |
 | NILM disaggregation           | ✅ | ❌ | ✅ (complex) | 300 lines |
 | ASHRAE-14 benchmarks          | ✅ | ❌ | ❌ | 100 lines |
-| sklearn compatible            | ✅ | ✅ | ❌ | — |
+| sklearn compatible            | ✅ | ✅ | ❌ | - |
 
 ---
 
@@ -342,6 +342,6 @@ If you use energykit in research, please cite:
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT - see [LICENSE](LICENSE).
 
-Built by [Muranai](https://muranai.com) — enterprise AI for the energy sector.
+Built by [Muranai](https://muranai.com) - enterprise AI for the energy sector.
