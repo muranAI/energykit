@@ -11,7 +11,7 @@
   <a href="https://badge.fury.io/py/energykit"><img src="https://badge.fury.io/py/energykit.svg" alt="PyPI version"/></a>
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="Python 3.9+"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"/></a>
-  <a href="https://pepy.tech/project/energykit"><img src="https://static.pepy.tech/badge/energykit" alt="Downloads"/></a>
+  <a href="https://pepy.tech/project/energykit"><img src="https://img.shields.io/pypi/dm/energykit?label=downloads&color=blue" alt="Downloads"/></a>
 </p>
 
 <p align="center">
@@ -77,19 +77,140 @@ That's the difference between a technical metric and a business case.
 
 ## Installation
 
+> **Requires Python 3.9 or higher.** Core dependencies: `numpy`, `pandas 2.x`, `scikit-learn`, `scipy`.
+
+### Quick install (all platforms)
+
 ```bash
 pip install energykit
 ```
 
 ```bash
-# With gradient boosting forecasting (recommended)
+# + LightGBM forecasting (recommended for best accuracy)
 pip install "energykit[forecast]"
 
-# Everything
+# + Everything (forecast, DER optimizer, dataset downloaders)
 pip install "energykit[all]"
 ```
 
-> **Requires Python 3.9+**. Core dependencies: `numpy`, `pandas 2.x`, `scikit-learn`, `scipy`. LightGBM is optional but recommended.
+---
+
+### Windows
+
+**Using Command Prompt or PowerShell:**
+
+```powershell
+# 1. Check your Python version (must be 3.9+)
+python --version
+
+# 2. Install energykit
+pip install energykit
+
+# 3. Verify the install
+python -c "import energykit; print(energykit.__version__)"
+```
+
+**Using Anaconda / Miniconda (recommended on Windows):**
+
+```powershell
+# Create a dedicated environment
+conda create -n energykit-env python=3.11
+conda activate energykit-env
+
+# Install energykit with all extras
+pip install "energykit[all]"
+```
+
+> **No Python yet?** Download from [python.org/downloads](https://www.python.org/downloads/) or install [Anaconda](https://www.anaconda.com/download). Make sure to check **"Add Python to PATH"** during installation.
+
+---
+
+### macOS
+
+**Using the built-in Terminal:**
+
+```bash
+# 1. Check your Python version
+python3 --version
+
+# 2. Install energykit (use pip3 on macOS)
+pip3 install energykit
+
+# 3. Verify
+python3 -c "import energykit; print(energykit.__version__)"
+```
+
+**Using Homebrew + pyenv (recommended):**
+
+```bash
+# Install pyenv to manage Python versions
+brew install pyenv
+pyenv install 3.11
+pyenv global 3.11
+
+# Install energykit
+pip install "energykit[all]"
+```
+
+**Using Anaconda on macOS:**
+
+```bash
+conda create -n energykit-env python=3.11
+conda activate energykit-env
+pip install "energykit[all]"
+```
+
+> **No Python yet?** `brew install python@3.11` or download from [python.org](https://www.python.org/downloads/macos/).
+
+---
+
+### Linux
+
+**Ubuntu / Debian:**
+
+```bash
+# Install Python 3.11 if not already present
+sudo apt update
+sudo apt install python3.11 python3.11-venv python3-pip -y
+
+# Create a virtual environment (best practice)
+python3.11 -m venv .venv
+source .venv/bin/activate
+
+# Install energykit
+pip install "energykit[all]"
+
+# Verify
+python -c "import energykit; print(energykit.__version__)"
+```
+
+**RHEL / Fedora / CentOS:**
+
+```bash
+sudo dnf install python3.11 python3-pip -y
+python3.11 -m venv .venv
+source .venv/bin/activate
+pip install "energykit[all]"
+```
+
+**Using Conda on Linux:**
+
+```bash
+conda create -n energykit-env python=3.11
+conda activate energykit-env
+pip install "energykit[all]"
+```
+
+---
+
+### Install extras explained
+
+| Extra | What it adds | When to use |
+|-------|-------------|-------------|
+| `energykit[forecast]` | LightGBM, statsmodels | Better load forecasting accuracy |
+| `energykit[optimize]` | PuLP solver | Advanced DER dispatch (optional) |
+| `energykit[datasets]` | requests, tqdm | Auto-download public datasets |
+| `energykit[all]` | Everything above | Development / full feature set |
 
 ---
 
