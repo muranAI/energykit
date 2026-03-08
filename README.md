@@ -12,6 +12,7 @@
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="Python 3.9+"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"/></a>
   <a href="https://github.com/muranAI/energykit/stargazers"><img src="https://img.shields.io/github/stars/muranAI/energykit?style=social" alt="GitHub Stars"/></a>
+  <a href="https://energykit.readthedocs.io/en/latest/"><img src="https://readthedocs.org/projects/energykit/badge/?version=latest" alt="Docs"/></a>
 </p>
 
 <p align="center">
