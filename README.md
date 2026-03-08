@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://muranai.com">
+    <img src="https://muranai.com/images/logo.png" alt="Muranai" width="200"/>
+  </a>
+</p>
+
 # energykit
 
 [![CI](https://github.com/muranai/energykit/actions/workflows/ci.yml/badge.svg)](https://github.com/muranai/energykit/actions/workflows/ci.yml)
@@ -17,7 +23,7 @@ report = ek.diagnose(your_meter_data)
 ```
 
 ```
-╔════════════════════════════════════════════════════════════════════╗
+╔════════════════════════════════════════════════════════════════════�-
 ║           ⚡  ENERGYKIT  |  ENERGY FINANCIAL DIAGNOSIS  ⚡          ║
 ╠════════════════════════════════════════════════════════════════════╣
 ║  Period  : Jan 2025 → Dec 2025   (8,760 readings)                  ║
